@@ -35,7 +35,8 @@ function agregarTweet(e) {
     // Añadir al arreglo de tweets
     tweets = [...tweets, tweetObj];
 
-    console.log(tweets);
+    // Una vez agregado vamos a crear el HTML
+    crearHTML();
     
 }
 
@@ -53,4 +54,13 @@ function mostrarError(error) {
     setTimeout(() => {
         mensajeError.remove();
     },1000)
+}
+
+    // Muestra un listado de los tweets
+function crearHTML() {
+    
+    if(tweets.lenght > 0) {
+        
+    }
+
 }
