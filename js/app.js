@@ -22,9 +22,35 @@ function agregarTweet(e) {
 
     // Validacion...
     if(tweet === '') {
-        console.log('no puede ir vacio');
+        mostrarError('un mensaje no puede ir vacio');
 
         return; // Evita que se ejecuten mas lineas de codigo
     }
-    console.log('fpjawjgpg');
+
+    const tweetObj = {
+        id: Date.now(),
+        tweet
+    }
+
+    // Añadir al arreglo de tweets
+    tweets = [...tweets, tweetObj];
+
+    console.log(tweets);
+    
+}
+
+    // Mostrar mendajes de error
+function mostrarError(error) {
+    const mensajeError = document.createElement('p');
+    mensajeError.textContent = error;
+    mensajeError.classList.add('error');
+
+    // Insertar en el contenido
+    const contenido = document.querySelector('#contenido');
+    contenido.appendChild(mensajeError);
+
+    // Elimina la alerta despues de cierto tiempo
+    setTimeout(() => {
+        mensajeError.remove();
+    },1000)
 }
